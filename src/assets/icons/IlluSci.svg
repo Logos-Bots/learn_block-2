@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200.000000" height="80.000000" fill="none" customFrame="#000000">
+	<rect id="IlluSci" width="200.000000" height="80.000000" x="0.000000" y="0.000000" />
+	<circle id="Эллипс 144" cx="100" cy="40" r="12" opacity="0.200000003" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 145" cx="56" cy="20" r="8" opacity="0.150000006" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 146" cx="144" cy="20" r="8" opacity="0.150000006" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 147" cx="56" cy="60" r="8" opacity="0.150000006" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 148" cx="144" cy="60" r="8" opacity="0.150000006" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 149" cx="20" cy="40" r="6" opacity="0.119999997" fill="rgb(255,255,255)" />
+	<circle id="Эллипс 150" cx="180" cy="40" r="6" opacity="0.119999997" fill="rgb(255,255,255)" />
+	<line id="Линия 67" x1="0" x2="25" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.500000" transform="matrix(-0.96,-0.28,0.28,-0.96,88,33)" />
+	<line id="Линия 68" x1="0" x2="25" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.500000" transform="matrix(-0.96,0.28,-0.28,-0.96,88,47)" />
+	<line id="Линия 69" x1="0" x2="25" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.500000" transform="matrix(0.96,-0.28,0.28,0.96,112,33)" />
+	<line id="Линия 70" x1="0" x2="25" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.500000" transform="matrix(0.96,0.28,-0.28,0.96,112,47)" />
+	<line id="Линия 71" x1="0" x2="23.769722" y1="0" y2="0" opacity="0.349999994" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.925547,0.378633,-0.378633,-0.925547,48,27)" />
+	<line id="Линия 72" x1="0" x2="23.769722" y1="0" y2="0" opacity="0.349999994" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.925547,-0.378633,0.378633,-0.925547,48,53)" />
+	<line id="Линия 73" x1="0" x2="23.769722" y1="0" y2="0" opacity="0.349999994" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.925547,0.378633,-0.378633,0.925547,152,27)" />
+	<line id="Линия 74" x1="0" x2="23.769722" y1="0" y2="0" opacity="0.349999994" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.925547,-0.378633,0.378633,0.925547,152,53)" />
+</svg>
