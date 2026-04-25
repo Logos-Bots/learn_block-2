@@ -75,6 +75,7 @@
   /* Backgrounds */
   --bg-page: #F3F4F6;
   --bg-card: #FFFFFF;
+  --bg-btn: #e4e4e4;
 
   /* Text */
   --text-primary: #111827;
@@ -121,4 +122,21 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-border: var(--border);
+}
+
+@layer components {
+  .container-mobile-tw {
+    @apply w-full px-4;
+  }
+  .header__btn-tw {
+    @apply h-9 w-9 p-3 bg-(--bg-btn);
+  }
+
+  /* Закругление для элементов (в конце класса число - закругление в пикелях)  */
+  .rounded-8-tw {
+    @apply rounded-lg
+  }
+  .rounded-100-tw {
+    @apply rounded-full
+  }
 }
