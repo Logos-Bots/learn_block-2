@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200.000000" height="80.000000" fill="none" customFrame="#000000">
+	<rect id="IlluTech" width="200.000000" height="80.000000" x="0.000000" y="0.000000" />
+	<circle id="Эллипс 136" cx="40" cy="40" r="18" stroke="rgb(255,255,255)" stroke-width="1.500000" />
+	<circle id="Эллипс 137" cx="100" cy="16" r="11" stroke="rgb(255,255,255)" stroke-width="1.500000" />
+	<circle id="Эллипс 138" cx="100" cy="64" r="11" stroke="rgb(255,255,255)" stroke-width="1.500000" />
+	<circle id="Эллипс 139" cx="160" cy="40" r="18" stroke="rgb(255,255,255)" stroke-width="1.500000" />
+	<line id="Линия 59" x1="0" x2="35.8468971" y1="0" y2="0" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.864789,-0.502136,0.502136,0.864789,58,40)" />
+	<line id="Линия 60" x1="0" x2="35.8468971" y1="0" y2="0" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.864789,0.502136,-0.502136,0.864789,58,40)" />
+	<line id="Линия 61" x1="0" x2="35.8468971" y1="0" y2="0" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.864789,-0.502136,0.502136,-0.864789,142,40)" />
+	<line id="Линия 62" x1="0" x2="35.8468971" y1="0" y2="0" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.864789,0.502136,-0.502136,-0.864789,142,40)" />
+	<circle id="Эллипс 140" cx="12" cy="22" r="6" opacity="0.699999988" stroke="rgb(255,255,255)" stroke-width="1.000000" />
+	<circle id="Эллипс 141" cx="12" cy="58" r="6" opacity="0.699999988" stroke="rgb(255,255,255)" stroke-width="1.000000" />
+	<line id="Линия 63" x1="0" x2="8.06225777" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.496139,0.868243,-0.868243,0.496139,18,24)" />
+	<line id="Линия 64" x1="0" x2="8.06225777" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(0.496139,-0.868243,0.868243,0.496139,18,56)" />
+	<circle id="Эллипс 142" cx="188" cy="22" r="6" opacity="0.699999988" stroke="rgb(255,255,255)" stroke-width="1.000000" />
+	<circle id="Эллипс 143" cx="188" cy="58" r="6" opacity="0.699999988" stroke="rgb(255,255,255)" stroke-width="1.000000" />
+	<line id="Линия 65" x1="0" x2="8.06225777" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.496139,0.868243,-0.868243,-0.496139,182,24)" />
+	<line id="Линия 66" x1="0" x2="8.06225777" y1="0" y2="0" opacity="0.5" stroke="rgb(255,255,255)" stroke-width="1.000000" transform="matrix(-0.496139,-0.868243,0.868243,-0.496139,182,56)" />
+</svg>

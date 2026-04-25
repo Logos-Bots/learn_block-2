@@ -1,0 +1,124 @@
+/* ==================== ШРИФТЫ ==================== */
+
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Regular.woff2") format("woff2"),
+       url("../assets/fonts/Inter-Regular.woff") format("woff"),
+       url("../assets/fonts/Inter-Regular.otf") format("opentype");
+}
+
+/* Inter Italic */
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Italic.woff2") format("woff2"),
+       url("../assets/fonts/Inter-Italic.woff") format("woff"),
+       url("../assets/fonts/Inter-Italic.otf") format("opentype");
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Medium.woff2") format("woff2"),
+       url("../assets/fonts/Inter-Medium.woff") format("woff"),
+       url("../assets/fonts/Inter-Medium.otf") format("opentype");
+}
+
+/* Inter Medium Italic */
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-MediumItalic.woff2") format("woff2"),
+       url("../assets/fonts/Inter-MediumItalic.woff") format("woff"),
+       url("../assets/fonts/Inter-MediumItalic.otf") format("opentype");
+}
+
+/* Inter SemiBold */
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+       url("../assets/fonts/Inter-SemiBold.woff") format("woff"),
+       url("../assets/fonts/Inter-SemiBold.otf") format("opentype");
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Bold.woff2") format("woff2"),
+       url("../assets/fonts/Inter-Bold.woff") format("woff"),
+       url("../assets/fonts/Inter-Bold.otf") format("opentype");
+}
+
+/* ==================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ==================== */
+
+:root {
+  /* Fonts */
+  --font-primary: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Backgrounds */
+  --bg-page: #F3F4F6;
+  --bg-card: #FFFFFF;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+
+  /* Accent */
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+
+  /* Misc */
+  --border: #E5E7EB;
+}
+
+.dark {
+  /* Backgrounds */
+  --bg-page: #0B0F19;
+  --bg-card: #111827;
+
+  /* Text */
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+
+  /* Accent */
+  --accent: #60A5FA;
+  --accent-hover: #3B82F6;
+
+  /* Misc */
+  --border: #1F2937;
+}
+
+/* ==================== TAILWIND ТЕМА ==================== */
+
+@import "tailwindcss";
+
+@theme {
+  /* Шрифты */
+  --font-primary: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Цвета из CSS-переменных для поддержки тем */
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+}
