@@ -139,7 +139,7 @@
     </symbol>
   </svg>
   <div id="app">
-    <header class="header">
+    <header class="header w-full">
       <div class="container container-mobile-tw">
         <nav class="header-nav py-3 flex justify-between">
           <div class="nav__left-side flex items-center gap-2">
@@ -162,25 +162,51 @@
                 </g>
               </svg>
             </a>
-            <h2>Контент-Хаб</h2>
+            <h2 class="size-18-tw">Контент-Хаб</h2>
           </div>
           <div class="nav__right-side">
             <button class="search-btn header__btn-tw rounded-8-tw">
-              <img src="./src/assets/icons/search.svg" alt="search-icon">
+              <svg width="13" height="13">
+                <use href="#search">
+              </svg>            
             </button>
             <button class="theme-btn header__btn-tw rounded-8-tw">
-              <img src="./src/assets/icons/moon.svg" alt="search-icon">
+              <svg width="13" height="13">
+                <use href="#moon">
+              </svg>            
             </button>
             <button class="user-btn header__btn-tw rounded-100-tw">
-              <img src="./src/assets/icons/user.svg" alt="search-icon">
+              <svg width="13" height="13">
+                <use href="#user">
+              </svg>
             </button>
           </div>
         </nav>
       </div>
     </header>
-    <svg>
-      <use href="#cpu"></use>
-    </svg>
+    <aside class="aside border-y">
+      <div class="container container-mobile-tw">
+        <nav class="aside__nav py-2">
+          <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
+            <li class="category-item active-tw">
+              <button>Все</button>
+            </li>
+            <li class="category-item category-item-tw">
+              <button>Технологии</button>
+            </li>
+            <li class="category-item category-item-tw">
+              <button>Дизайн</button>
+            </li>
+            <li class="category-item category-item-tw">
+              <button>Бизнес</button>
+            </li>
+            <li class="category-item category-item-tw">
+              <button>Наука</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
   </div>
 </body>
 </html>

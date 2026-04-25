@@ -125,18 +125,45 @@
 }
 
 @layer components {
+  .active-tw {
+    @apply py-1.5 px-3 rounded-[20px] text-[16px] text-white bg-blue-400;
+  }
+  /* Размер текста (в конце класса число - размер в пикелях)  */
+  .size-16-tw {
+    @apply text-[16px];
+  }
+  .size-18-tw {
+    @apply text-lg;
+  }
+  /* Стили для container на разных размерах */
   .container-mobile-tw {
     @apply w-full px-4;
   }
+  /* Кнопки в header */
   .header__btn-tw {
     @apply h-9 w-9 p-3 bg-(--bg-btn);
   }
-
   /* Закругление для элементов (в конце класса число - закругление в пикелях)  */
   .rounded-8-tw {
     @apply rounded-lg
   }
+  .rounded-20-tw {
+    @apply rounded-[20px]
+  }
   .rounded-100-tw {
     @apply rounded-full
+  }
+
+  .category-item-tw {
+    @apply py-1.5 px-3 rounded-[20px] text-[16px] bg-(--bg-btn);
+  }
+
+  /* Скрыввет полосу прокрутки */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari и Opera */
   }
 }
