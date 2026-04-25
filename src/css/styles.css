@@ -129,6 +129,9 @@
     @apply py-1.5 px-3 rounded-[20px] text-[16px] text-white bg-blue-400;
   }
   /* Размер текста (в конце класса число - размер в пикелях)  */
+  .size-14-tw {
+    @apply text-[14px];
+  }
   .size-16-tw {
     @apply text-[16px];
   }

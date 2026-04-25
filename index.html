@@ -138,9 +138,9 @@
         fill="currentColor" fill-rule="evenodd" />
     </symbol>
   </svg>
-  <div id="app">
+  <div id="app h-full w-full">
     <header class="header w-full">
-      <div class="container container-mobile-tw">
+      <div class="container-mobile-tw">
         <nav class="header-nav py-3 flex justify-between">
           <div class="nav__left-side flex items-center gap-2">
             <a href="#">
@@ -162,7 +162,7 @@
                 </g>
               </svg>
             </a>
-            <h2 class="size-18-tw">Контент-Хаб</h2>
+            <h2 class="size-18-tw font-bold">Контент-Хаб</h2>
           </div>
           <div class="nav__right-side">
             <button class="search-btn header__btn-tw rounded-8-tw">
@@ -184,29 +184,59 @@
         </nav>
       </div>
     </header>
-    <aside class="aside border-y">
-      <div class="container container-mobile-tw">
-        <nav class="aside__nav py-2">
-          <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
-            <li class="category-item active-tw">
-              <button>Все</button>
-            </li>
-            <li class="category-item category-item-tw">
-              <button>Технологии</button>
-            </li>
-            <li class="category-item category-item-tw">
-              <button>Дизайн</button>
-            </li>
-            <li class="category-item category-item-tw">
-              <button>Бизнес</button>
-            </li>
-            <li class="category-item category-item-tw">
-              <button>Наука</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
+    <main class="main">
+      <aside class="aside mb-3 border-y border-border">
+        <div class="container-mobile-tw">
+          <nav class="aside__nav py-2">
+            <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
+              <li class="category-item active-tw">
+                <button>Все</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Технологии</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Дизайн</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Бизнес</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Наука</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <section class="posts">
+        <div class="container-mobile-tw">
+          <div class="posts__nav mb-3 flex justify-between items-center">
+            <div class="posts__info">
+              <h2 class="size-18-tw font-bold">Все посты</h2>
+              <p class="size-14-tw text-text-secondary">48 публикаций</p>
+            </div>
+            <div class="posts__data-filter">
+              <select name="data-filter" class="py-2 px-2.5 size-14-tw bg-white outline-none">
+                <option>По дате</option>
+                <option value="data-new">Сначала новые</option>
+                <option value="data-old">Сначала старые</option>
+              </select>
+            </div>
+          </div>
+          <!--  
+              Тут будут карточки с постами
+          -->
+        </div>
+      </section>
+    </main>
+    <!-- значок с плюсом будет только на мобилке, на больших экранах будет скрываться -->
+    <footer class="footer absolute bottom-6 left-1/2 -translate-x-1/2">
+      <button class="p-3 rounded-100-tw text-white bg-accent">
+        <svg width="25" height="25">
+          <use href="#plus">
+        </svg>
+      </button>
+    </footer>
   </div>
 </body>
 </html>
