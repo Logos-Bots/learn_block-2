@@ -125,9 +125,6 @@
 }
 
 @layer components {
-  .active-tw {
-    @apply py-1.5 px-3 rounded-[20px] text-[16px] text-white bg-blue-400;
-  }
   /* Размер текста (в конце класса число - размер в пикелях)  */
   .size-14-tw {
     @apply text-[14px];
@@ -138,14 +135,10 @@
   .size-18-tw {
     @apply text-lg;
   }
-  /* Стили для container на разных размерах */
-  .container-mobile-tw {
-    @apply w-full px-4;
+  .size-20-tw {
+    @apply text-xl;
   }
-  /* Кнопки в header */
-  .header__btn-tw {
-    @apply h-9 w-9 p-3 bg-(--bg-btn);
-  }
+
   /* Закругление для элементов (в конце класса число - закругление в пикелях)  */
   .rounded-8-tw {
     @apply rounded-lg
@@ -157,10 +150,6 @@
     @apply rounded-full
   }
 
-  .category-item-tw {
-    @apply py-1.5 px-3 rounded-[20px] text-[16px] bg-(--bg-btn);
-  }
-
   /* Скрыввет полосу прокрутки */
   .scrollbar-hide {
     -ms-overflow-style: none; /* IE и Edge */
@@ -168,5 +157,31 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none; /* Chrome, Safari и Opera */
+  }
+
+  /* Стили для container на разных размерах */
+  .container-mobile-tw {
+    @apply w-full px-4;
+  }
+
+  /* Кнопки в header */
+  .header__btn-tw {
+    @apply h-9 w-9 p-3 bg-(--bg-btn);
+  }
+  .header__add-post-btn-tw {
+    @apply p-2.5 h-9 min-w-26.25 flex justify-center items-center gap-1.5 text-white bg-(--accent);
+  }
+
+  /* фильтры по категориям (Все, бизнес, наука и тд) */
+      /* Активный фильтр синего цвета */
+  .active-tw {
+    @apply py-1.5 px-3 rounded-[20px] text-[16px] text-white bg-blue-400;
+  }
+  .category-item-tw {
+    @apply py-1.5 px-3 rounded-[20px] text-[16px] bg-(--bg-btn);
+  }
+      /* Для фильтров с иконками на экранах >= 768 */
+  .category-item__btn-tw {
+    @apply flex items-center justify-center gap-1.5;
   }
 }

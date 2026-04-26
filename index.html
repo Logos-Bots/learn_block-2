@@ -141,9 +141,9 @@
   <div id="app h-full w-full">
     <header class="header w-full">
       <div class="container-mobile-tw">
-        <nav class="header-nav py-3 flex justify-between">
+        <nav class="header-nav py-3 flex justify-between items-center">
           <div class="nav__left-side flex items-center gap-2">
-            <a href="#">
+            <a href="#" title="logo">
               <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.000000" height="28.000000" fill="none" customFrame="url(#clipPath_2)">
                 <defs>
                   <clipPath id="clipPath_2">
@@ -164,18 +164,32 @@
             </a>
             <h2 class="size-18-tw font-bold">Контент-Хаб</h2>
           </div>
-          <div class="nav__right-side">
-            <button class="search-btn header__btn-tw rounded-8-tw">
+          <div class="nav__right-side max-h-9 flex items-center gap-2.5">
+            <button 
+              class="search-btn header__btn-tw rounded-8-tw"
+              title="search-btn">
               <svg width="13" height="13">
                 <use href="#search">
               </svg>            
             </button>
-            <button class="theme-btn header__btn-tw rounded-8-tw">
+            <button 
+              class="theme-btn header__btn-tw rounded-8-tw"
+              title="theme-btn">
               <svg width="13" height="13">
                 <use href="#moon">
               </svg>            
             </button>
-            <button class="user-btn header__btn-tw rounded-100-tw">
+            <!-- Появляется на экранах >= 768 -->
+            <button 
+              class="add-post__btn header__add-post-btn-tw size-14-tw rounded-8-tw hidden md:flex"
+              title="add-post__btn">
+              <img src="./src/assets/icons/plus.svg" alt="plus">
+              Создать
+            </button>
+            <!------------------------------------->
+            <button 
+              class="user-btn header__btn-tw rounded-100-tw"
+              title="profile-btn">
               <svg width="13" height="13">
                 <use href="#user">
               </svg>
@@ -185,7 +199,74 @@
       </div>
     </header>
     <main class="main">
-      <aside class="aside mb-3 border-y border-border">
+      <aside class="filters-menu mb-3 border-y border-border">
+        <div class="container-mobile-tw">
+          <nav class="filters-menu__nav py-2">
+            <!--Фильтры на маленьком экране-->
+            <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide md:hidden">
+              <li class="category-item active-tw">
+                <button>Все</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Технологии</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Дизайн</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Бизнес</button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button>Наука</button>
+              </li>
+            </ul>
+            <!--Фильтры на больших экранах-->
+            <ul class="nav__categories hidden items-center gap-1.5 overflow-x-auto scrollbar-hide md:flex">
+              <li class="category-item active-tw">
+                <button class="category-item__btn-tw">
+                  <svg width="13" height="13">
+                    <use href="#layout-grid">
+                  </svg> 
+                  Все посты
+                </button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button class="category-item__btn-tw">
+                  <svg width="13" height="13">
+                    <use href="#cpu">
+                  </svg> 
+                  Технологии
+                </button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button class="category-item__btn-tw">
+                  <svg width="13" height="13">
+                    <use href="#pen-tool">
+                  </svg> 
+                  Дизайн
+                </button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button class="category-item__btn-tw">
+                  <svg width="13" height="13">
+                    <use href="#briefcase">
+                  </svg> 
+                  Бизнес
+                </button>
+              </li>
+              <li class="category-item category-item-tw">
+                <button class="category-item__btn-tw">
+                  <svg width="13" height="13">
+                    <use href="#flask-conical">
+                  </svg>    
+                  Наука
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <!-- <aside class="aside mb-3 border-y border-border">
         <div class="container-mobile-tw">
           <nav class="aside__nav py-2">
             <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
@@ -207,7 +288,7 @@
             </ul>
           </nav>
         </div>
-      </aside>
+      </aside> -->
       <section class="posts">
         <div class="container-mobile-tw">
           <div class="posts__nav mb-3 flex justify-between items-center">
@@ -216,7 +297,10 @@
               <p class="size-14-tw text-text-secondary">48 публикаций</p>
             </div>
             <div class="posts__data-filter">
-              <select name="data-filter" class="py-2 px-2.5 size-14-tw bg-white outline-none">
+              <select 
+                class="py-2 px-2.5 size-14-tw bg-white outline-none"
+                name="data-filter"
+                title="data-filter">
                 <option>По дате</option>
                 <option value="data-new">Сначала новые</option>
                 <option value="data-old">Сначала старые</option>
@@ -230,8 +314,10 @@
       </section>
     </main>
     <!-- значок с плюсом будет только на мобилке, на больших экранах будет скрываться -->
-    <footer class="footer absolute bottom-6 left-1/2 -translate-x-1/2">
-      <button class="p-3 rounded-100-tw text-white bg-accent">
+    <footer class="footer absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden">
+      <button 
+        class="p-3 rounded-100-tw text-white bg-accent" 
+        title="add-post__btn">
         <svg width="25" height="25">
           <use href="#plus">
         </svg>
