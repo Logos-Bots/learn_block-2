@@ -126,6 +126,9 @@
 
 @layer components {
   /* Размер текста (в конце класса число - размер в пикелях)  */
+  .size-12-tw {
+    @apply text-[12px];
+  }
   .size-14-tw {
     @apply text-[14px];
   }
@@ -162,6 +165,9 @@
   /* Стили для container на разных размерах */
   .container-mobile-tw {
     @apply w-full px-4;
+  }
+  .container-desktop-tw {
+    @apply w-full px-6;
   }
 
   /* Кнопки в header */

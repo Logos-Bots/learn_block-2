@@ -166,7 +166,7 @@
           </div>
           <div class="nav__right-side max-h-9 flex items-center gap-2.5">
             <button 
-              class="search-btn header__btn-tw rounded-8-tw"
+              class="search-btn header__btn-tw rounded-8-tw xl:hidden"
               title="search-btn">
               <svg width="13" height="13">
                 <use href="#search">
@@ -181,7 +181,8 @@
             </button>
             <!-- Появляется на экранах >= 768 -->
             <button 
-              class="add-post__btn header__add-post-btn-tw size-14-tw rounded-8-tw hidden md:flex"
+              class="add-post__btn header__add-post-btn-tw size-14-tw rounded-8-tw hidden 
+              md:flex md:items-center"
               title="add-post__btn">
               <img src="./src/assets/icons/plus.svg" alt="plus">
               Создать
@@ -198,120 +199,239 @@
         </nav>
       </div>
     </header>
-    <main class="main">
-      <aside class="filters-menu mb-3 border-y border-border">
-        <div class="container-mobile-tw">
-          <nav class="filters-menu__nav py-2">
-            <!--Фильтры на маленьком экране-->
-            <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide md:hidden">
-              <li class="category-item active-tw">
-                <button>Все</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Технологии</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Дизайн</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Бизнес</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Наука</button>
-              </li>
-            </ul>
-            <!--Фильтры на больших экранах-->
-            <ul class="nav__categories hidden items-center gap-1.5 overflow-x-auto scrollbar-hide md:flex">
-              <li class="category-item active-tw">
-                <button class="category-item__btn-tw">
-                  <svg width="13" height="13">
-                    <use href="#layout-grid">
-                  </svg> 
-                  Все посты
-                </button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button class="category-item__btn-tw">
-                  <svg width="13" height="13">
-                    <use href="#cpu">
-                  </svg> 
-                  Технологии
-                </button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button class="category-item__btn-tw">
-                  <svg width="13" height="13">
-                    <use href="#pen-tool">
-                  </svg> 
-                  Дизайн
-                </button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button class="category-item__btn-tw">
-                  <svg width="13" height="13">
-                    <use href="#briefcase">
-                  </svg> 
-                  Бизнес
-                </button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button class="category-item__btn-tw">
-                  <svg width="13" height="13">
-                    <use href="#flask-conical">
-                  </svg>    
-                  Наука
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </aside>
-      <!-- <aside class="aside mb-3 border-y border-border">
-        <div class="container-mobile-tw">
-          <nav class="aside__nav py-2">
-            <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
-              <li class="category-item active-tw">
-                <button>Все</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Технологии</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Дизайн</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Бизнес</button>
-              </li>
-              <li class="category-item category-item-tw">
-                <button>Наука</button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </aside> -->
-      <section class="posts">
-        <div class="container-mobile-tw">
-          <div class="posts__nav mb-3 flex justify-between items-center">
-            <div class="posts__info">
-              <h2 class="size-18-tw font-bold">Все посты</h2>
-              <p class="size-14-tw text-text-secondary">48 публикаций</p>
+    <main class="main xl:flex">
+      <div class="left-side xl:min-h-full xl:w-80">
+        <!-- Фильтры на экранах < 1280 -->
+        <section class="filters-menu mb-3 border-y border-border xl:hidden">
+          <div class="container-mobile-tw">
+            <nav class="filters-menu__nav py-2">
+              <!--Фильтры на маленьком экране-->
+              <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide md:hidden">
+                <li class="category-item active-tw">
+                  <button>Все</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Технологии</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Дизайн</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Бизнес</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Наука</button>
+                </li>
+              </ul>
+              <!--Фильтры на больших экранах-->
+              <ul class="nav__categories hidden items-center gap-1.5 overflow-x-auto scrollbar-hide md:flex">
+                <li class="category-item active-tw">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#layout-grid">
+                    </svg> 
+                    Все посты
+                  </button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#cpu">
+                    </svg> 
+                    Технологии
+                  </button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#pen-tool">
+                    </svg> 
+                    Дизайн
+                  </button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#briefcase">
+                    </svg> 
+                    Бизнес
+                  </button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#flask-conical">
+                    </svg>    
+                    Наука
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <!-- Фильтры на экранах >= 1280 -->
+        <aside class="filters-menu h-full hidden bg-amber-100 
+        xl:flex">
+          <div class="container-mobile-tw">
+            <div class="search-input my-6 h-10 w-full flex">
+              <input 
+                class="search-input p-3 h-full w-full rounded-8-tw size-14-tw italic bg-gray-300"
+                placeholder="Поиск постов..."
+                title="search-input">
             </div>
-            <div class="posts__data-filter">
-              <select 
-                class="py-2 px-2.5 size-14-tw bg-white outline-none"
-                name="data-filter"
-                title="data-filter">
-                <option>По дате</option>
-                <option value="data-new">Сначала новые</option>
-                <option value="data-old">Сначала старые</option>
-              </select>
+            <nav class="filters-menu__nav mt-6 mb-12 border-b border-border">
+              <h3 class="menu-nav__title mb-2 size-12-tw uppercase text-text-secondary">Категории</h3>
+              <!--Фильтры на маленьком экране-->
+              <ul class="nav__categories flex items-center gap-1.5 overflow-x-auto scrollbar-hide md:hidden">
+                <li class="category-item active-tw">
+                  <button>Все</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Технологии</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Дизайн</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Бизнес</button>
+                </li>
+                <li class="category-item category-item-tw">
+                  <button>Наука</button>
+                </li>
+              </ul>
+              <!--Фильтры на больших экранах-->
+              <ul class="nav__categories items-center gap-1.5 overflow-x-auto scrollbar-hide hidden md:flex
+              xl:flex-col xl:items-start">
+                <li class="category-item active-tw
+                xl:w-full xl:flex xl:justify-between xl:items-center">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#layout-grid">
+                    </svg> 
+                    Все посты
+                  </button>
+                  <p class="hidden xl:block">48</p>
+                </li>
+                <li class="category-item category-item-tw
+                xl:w-full xl:flex xl:justify-between xl:items-center">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#cpu">
+                    </svg> 
+                    Технологии
+                  </button>
+                  <p class="hidden xl:block">48</p>
+                </li>
+                <li class="category-item category-item-tw
+                xl:w-full xl:flex xl:justify-between xl:items-center">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#pen-tool">
+                    </svg> 
+                    Дизайн
+                  </button>
+                    <p class="hidden xl:block">48</p>
+                </li>
+                <li class="category-item category-item-tw
+                xl:w-full xl:flex xl:justify-between xl:items-center">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#briefcase">
+                    </svg> 
+                    Бизнес
+                  </button>
+                  <p class="hidden xl:block">48</p>
+                </li>
+                <li class="category-item category-item-tw 
+                xl:w-full xl:flex xl:justify-between xl:items-center">
+                  <button class="category-item__btn-tw">
+                    <svg width="13" height="13">
+                      <use href="#flask-conical">
+                    </svg>    
+                    Наука
+                  </button>
+                  <p class="hidden xl:block">48</p>
+                </li>
+              </ul>
+            </nav>
+            <div class="filter__status my-6">
+              <h3 class="status__title mb-2 size-12-tw uppercase text-text-secondary">Статус</h3>
+              <ul class="status__list size-14-tw">
+                <li class="status__item mb-2 last:mb-0">
+                  <button 
+                    class="status__item-btn flex items-center gap-2"
+                    title="status-btn">
+                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8.000000" height="8.000000" fill="none" customFrame="url(#clipPath_0)">
+                      <defs>
+                        <clipPath id="clipPath_0">
+                          <rect width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(255,255,255)" />
+                        </clipPath>
+                      </defs>
+                      <rect id="Фрейм 19" width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(16,185,129)" />
+                    </svg>
+                    Опубликованы
+                  </button>
+                </li>
+                <li class="status__item mb-2 last:mb-0">
+                  <button 
+                    class="status__item-btn flex items-center gap-2"
+                    title="status-btn">
+                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8.000000" height="8.000000" fill="none" customFrame="url(#clipPath_0)">
+                      <defs>
+                        <clipPath id="clipPath_0">
+                          <rect width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(255,255,255)" />
+                        </clipPath>
+                      </defs>
+                      <rect id="Фрейм 19" width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(16,185,129)" />
+                    </svg>
+                    Черновики
+                  </button>
+                </li>
+                <li class="status__item mb-2 last:mb-0">
+                  <button 
+                    class="status__item-btn flex items-center gap-2"
+                    title="status-btn">
+                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8.000000" height="8.000000" fill="none" customFrame="url(#clipPath_0)">
+                      <defs>
+                        <clipPath id="clipPath_0">
+                          <rect width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(255,255,255)" />
+                        </clipPath>
+                      </defs>
+                      <rect id="Фрейм 19" width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000" fill="rgb(16,185,129)" />
+                    </svg>
+                    В архиве
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
-          <!--  
-              Тут будут карточки с постами
-          -->
-        </div>
-      </section>
+        </aside>
+      </div>
+      <div class="right-side xl:w-full">
+        <section class="posts">
+          <div class="container-mobile-tw">
+            <div class="posts__nav mb-3 flex justify-between items-center">
+              <div class="posts__info">
+                <h2 class="size-18-tw font-bold">Все посты</h2>
+                <p class="size-14-tw text-text-secondary">48 публикаций</p>
+              </div>
+              <div class="posts__data-filter">
+                <select 
+                  class="py-2 px-2.5 size-14-tw bg-white outline-none"
+                  name="data-filter"
+                  title="data-filter">
+                  <option>По дате</option>
+                  <option value="data-new">Сначала новые</option>
+                  <option value="data-old">Сначала старые</option>
+                </select>
+              </div>
+            </div>
+            <!--  
+                Тут будут карточки с постами
+            -->
+          </div>
+        </section>
+      </div>
     </main>
     <!-- значок с плюсом будет только на мобилке, на больших экранах будет скрываться -->
     <footer class="footer absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden">
