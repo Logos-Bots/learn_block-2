@@ -1,0 +1,18 @@
+<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.000000" height="28.000000" fill="none" customFrame="url(#clipPath_0)">
+	<defs>
+		<clipPath id="clipPath_0">
+			<rect width="28.000000" height="28.000000" x="0.000000" y="0.000000" rx="6.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_1">
+			<rect width="13.000000" height="13.000000" x="7.500000" y="7.500000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Фрейм 374" width="28.000000" height="28.000000" x="0.000000" y="0.000000" rx="6.000000" fill="rgb(59,110,232)" />
+	<g id="layout-grid" customFrame="url(#clipPath_1)">
+		<rect id="layout-grid" width="13.000000" height="13.000000" x="7.500000" y="7.500000" />
+		<rect id="Прямоугольник 93" width="3.791667" height="3.791667" x="9.125000" y="9.125000" rx="0.541667" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.083333" />
+		<rect id="Прямоугольник 94" width="3.791667" height="3.791667" x="15.083313" y="9.125000" rx="0.541667" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.083333" />
+		<rect id="Прямоугольник 95" width="3.791667" height="3.791667" x="15.083313" y="15.083374" rx="0.541667" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.083333" />
+		<rect id="Прямоугольник 96" width="3.791667" height="3.791667" x="9.125000" y="15.083374" rx="0.541667" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.083333" />
+	</g>
+</svg>
