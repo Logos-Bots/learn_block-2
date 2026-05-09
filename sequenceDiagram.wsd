@@ -1,0 +1,195 @@
+@startuml
+title Content Hub - User Flow & Development Pipeline (Weeks 5-8)
+
+skinparam backgroundColor #FFFFFF
+skinparam participantBackgroundColor #F8FAFC
+skinparam participantBorderColor #CBD5E1
+skinparam sequenceArrowColor #64748B
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #FFFBEB
+skinparam noteBorderColor #FCD34D
+
+participant "👤 User" as User
+participant "📄 main.js\n[Dev C]" as Main
+participant "🗂️ mockData.js\n[Dev A/B]" as Mock
+participant "🔧 helpers.js\n[Dev C]" as Helpers
+participant "🎨 sidebar.js\n[Dev A]" as Sidebar
+participant "📋 feed.js\n[Dev B]" as Feed
+participant "🔍 filter.js\n[Dev B]" as Filter
+participant "🌐 api.js\n[Dev A/B/C]" as API
+participant "⏳ loader.js\n[Dev C]" as Loader
+participant "📭 emptyState.js\n[Dev B]" as Empty
+participant "🎨 theme.js\n[Dev C]" as Theme
+participant "✏️ createModal.js\n[Dev B]" as CreateModal
+participant "👁️ postModal.js\n[Dev A]" as PostModal
+participant "📇 card.js\n[Dev B]" as Card
+participant "✅ validator.js\n[Dev C]" as Validator
+
+== 🟦 Сценарий 1: Инициализация (Week 5-8) ==
+User -> Main: Открыть приложение
+Main -> Theme: loadTheme()
+Theme -> Theme: Проверить localStorage
+Theme --> Main: Вернуть тему (light/dark)
+Main -> Main: Применить класс 'dark' к html
+
+Main -> API: init() (async)
+API -> Loader: showLoader()
+Loader --> API: Спиннер в #posts-grid
+
+par Параллельная загрузка
+    API -> API: fetchUsers() (async/await)
+    API -> API: fetchPosts() (async/await)
+end
+
+alt Успех (200 OK)
+    API -> Helpers: enrichPostsData(posts, users)
+    Helpers -> Helpers: mergePostsAndAuthors(posts, users)\nДобавить category, status, likes (random)
+    Helpers --> API: Обогащенный массив
+    API -> Loader: hideLoader()
+    API --> Main: enrichedPosts
+    Main -> Sidebar: renderAuthors(users)
+    Sidebar -> Sidebar: generateCategoryButtons(categories)\n[Dev A]
+    Sidebar --> Main: HTML кнопок категорий
+    Main -> Feed: renderPosts(enrichedPosts)
+    alt posts.length > 0
+        Feed -> Card: createPostHTML(post) для каждого
+        Card --> Feed: HTML карточки
+        Feed --> User: Показать сетку постов
+    else posts.length === 0
+        Feed -> Empty: renderEmptyState()
+        Empty --> Feed: HTML Empty State
+        Feed --> User: Показать Empty State
+    end
+else Ошибка
+    API -> Empty: showErrorState("Ошибка загрузки")
+    Empty --> API: Кнопка "Повторить"
+    API --> Main: Ошибка
+end
+
+== 🎨 Сценарий 2: Переключение темы ==
+User -> Theme: Клик по кнопке темы
+Theme -> Theme: Переключить класс 'dark' на html
+Theme -> Theme: Сохранить в localStorage
+Theme --> User: Применить новую тему (все компоненты обновляются автоматически)
+
+== 📝 Сценарий 3: Создание первого поста (из Empty State) ==
+User -> Empty: Клик "Создать первый пост"
+Empty -> CreateModal: open()
+CreateModal -> CreateModal: Сбросить форму\nУстановить категорию по умолчанию (tech)
+CreateModal --> User: Показать модалку создания
+
+User -> CreateModal: Выбрать категорию "Дизайн"
+CreateModal -> CreateModal: updateModalTheme('design')\nСменить градиент и цвет кнопки
+CreateModal --> User: Обновленный интерфейс модалки
+
+User -> CreateModal: Заполнить поля формы\nНажать "Создать"
+CreateModal -> Validator: validateCreatePost(formData)
+Validator -> Validator: Проверить все поля (required, length, pattern)
+Validator --> CreateModal: {isValid: true, errors: []}
+
+CreateModal -> API: createPost(postData)
+API -> API: POST /posts (mock delay 500ms)
+API -> API: Добавить post в начало posts[]
+API --> CreateModal: newPost
+
+CreateModal -> CreateModal: Закрыть модалку
+CreateModal -> Feed: addPostToTop(newPost)
+Feed -> Feed: Скрыть Empty State (если был)
+Feed -> Card: createCardHTML(newPost)
+Card --> Feed: HTML карточки
+Feed -> Feed: Вставить карточку в сетку
+Feed --> User: Показать новую карточку
+
+== 🔍 Сценарий 4: Поиск и фильтрация ==
+User -> Filter: Ввести текст в поиск (debounce 300ms)
+Filter -> Filter: filterPostsBySearch(enrichedPosts, query)\nИскать в title/body (toLowerCase)
+Filter -> Feed: renderPosts(filteredPosts)
+alt filteredPosts.length === 0
+    Feed -> Empty: renderEmptyState("Ничего не найдено")
+    Empty --> Feed: HTML
+    Feed --> User: Показать Empty State
+else filteredPosts.length > 0
+    Feed -> Card: createCardHTML() для каждого
+    Card --> Feed: HTML карточек
+    Feed --> User: Показать отфильтрованные посты
+end
+
+User -> Sidebar: Клик по категории
+Sidebar -> Filter: filterPostsByCategory(enrichedPosts, categoryId)
+Filter -> Filter: Применить фильтр (all vs specific)
+Filter -> Feed: renderPosts(filteredPosts)
+Feed --> User: Обновленная сетка
+
+== 👁️ Сценарий 5: Просмотр поста ==
+User -> Card: Клик по карточке
+Card -> PostModal: open(postId)
+PostModal -> API: getPostById(postId)
+API --> PostModal: post data
+
+PostModal -> PostModal: populateModal(post)\nПрименить градиент категории\nОкрасить blockquote и кнопку "Редактировать"
+PostModal --> User: Показать модалку просмотра
+
+User -> PostModal: Клик "Редактировать"
+PostModal -> CreateModal: open(postData)\n(предзаполненная форма)
+CreateModal -> CreateModal: Заполнить поля данными поста\nПрименить градиент категории поста
+CreateModal --> User: Показать модалку редактирования
+
+== ❤️ Сценарий 6: Лайк поста ==
+User -> Card: Клик по кнопке лайка
+Card -> Card: Оптимистичное обновление:\nзакрасить иконку красным\nувеличить счетчик
+Card -> API: updateLike(postId, true)
+API -> API: PATCH /posts/:id (mock delay 300ms)
+API -> API: Обновить post.isLiked = true\npost.likes++
+API --> Card: updatedPost
+
+alt Пользователь в PostModal
+    User -> PostModal: Клик по кнопке лайка
+    PostModal -> PostModal: Оптимистичное обновление
+    PostModal -> API: updateLike(postId, true)
+    API -> API: Обновить в кэше
+    API --> PostModal: updatedPost
+end
+
+== 🗑️ Сценарий 7: Удаление поста ==
+User -> Card: Hover на карточку
+Card -> Card: Показать кнопку удаления
+User -> Card: Клик по кнопке удаления
+Card -> Card: confirm("Удалить этот пост?")
+User -> Card: Подтвердить
+
+Card -> Card: Анимация удаления:\nopacity: 0, scale: 0.9
+Card -> API: deletePost(postId)
+API -> API: DELETE /posts/:id (mock delay 500ms)
+API -> API: Удалить post из posts[]
+API --> Card: success
+
+Card -> Card: Удалить из DOM
+Card -> Feed: Проверить posts.length
+alt posts.length === 0
+    Feed -> Empty: renderEmptyState()
+    Empty --> Feed: HTML
+    Feed --> User: Показать Empty State
+else posts.length > 0
+    Feed --> User: Обновленная сетка (без удаленного)
+end
+
+== 📱 Сценарий 8: Мобильная навигация ==
+User -> Main: Клик по иконке поиска (mobile header)
+Main -> Filter: openSearchModal()
+Filter --> User: Показать поиск на весь экран
+
+User -> CreateModal: Клик "Создать" в Bottom Nav
+CreateModal -> CreateModal: open()
+CreateModal --> User: Показать модалку создания
+
+User -> Empty: Клик "Создать первый пост" (mobile)
+Empty -> CreateModal: open()
+CreateModal --> User: Показать модалку создания
+
+note over Main, Validator
+  🛠 Dev A: fetchUsers, handleError, filter by author, sidebar logic, postModal
+  🛠 Dev B: fetchPosts, filter/search logic, emptyState, feed, card, createModal
+  🛠 Dev C: api.js structure, enrichPostsData, loader, debounce, theme, validator, main init
+end note
+
+@enduml
