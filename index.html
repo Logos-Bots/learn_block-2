@@ -274,7 +274,7 @@
           </div>
         </section>
         <!-- Фильтры на экранах >= 1280 -->
-        <aside class="filters-menu h-full hidden bg-amber-100 xl:flex">
+        <aside class="filters-menu h-full hidden xl:flex">
           <div class="container-mobile-tw">
             <div class="search-input my-6 h-10 w-full flex">
               <input class="search-input p-3 h-full w-full rounded-8-tw size-14-tw italic bg-gray-300"
@@ -385,7 +385,7 @@
                         </clipPath>
                       </defs>
                       <rect id="frame1" width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000"
-                        fill="rgb(16,185,129)" />
+                        fill="rgba(245, 158, 11, 1)" />
                     </svg>
                     Черновики
                   </button>
@@ -401,7 +401,7 @@
                         </clipPath>
                       </defs>
                       <rect id="frame2" width="8.000000" height="8.000000" x="0.000000" y="0.000000" rx="4.000000"
-                        fill="rgb(16,185,129)" />
+                        fill="rgba(156, 163, 175, 1)" />
                     </svg>
                     В архиве
                   </button>
@@ -419,21 +419,40 @@
                 <h2 class="size-18-tw font-bold">Все посты</h2>
                 <p class="size-14-tw text-text-secondary">48 публикаций</p>
               </div>
-              <div class="posts__data-filter">
+              <!-- <div class="posts__data-filter">
                 <select class="py-2 px-2.5 size-14-tw bg-white outline-none" name="data-filter" title="data-filter">
                   <option>По дате</option>
                   <option value="data-new">Сначала новые</option>
                   <option value="data-old">Сначала старые</option>
                 </select>
-              </div>
+              </div> -->
+              <div class="posts__filters flex justify-center items-center gap-2">
+                <div class="posts__data-filter">
+                  <select 
+                    class="py-2 px-2.5 size-14-tw bg-white outline-none"
+                    name="data-filter"
+                    title="data-filter">
+                    <option>По дате</option>
+                    <option value="data-new">Сначала новые</option>
+                    <option value="data-old">Сначала старые</option>
+                  </select>
+                </div>
+                <div class="posts__view-toggle hidden md:flex">
+                  <button class="grid-toggle cursor-pointer">
+                    <img
+                      src="./src/assets/icons/gridToggle.svg" 
+                      alt="grid-toggle">
+                  </button>
+                  <button class="list-toggle cursor-pointer">
+                    <img
+                      src="./src/assets/icons/listToggle.svg" 
+                      alt="list-toggle">
+                  </button>
+                </div>
             </div>
-<<<<<<< HEAD
             <!--  
                 Тут будут карточки с постами ляляялял
             -->
-=======
-            <!-- Тут будут карточки с постами -->
->>>>>>> 663370304a012055c18ec515a01c32d4624806d2
           </div>
         </section>
       </div>
